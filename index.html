@@ -27,7 +27,7 @@
             font-size: 24px;
             font-weight: bold;
             margin-top: 50px;
-            margin-right:20px;
+            margin-right: 20px;
         }
         .content {
             max-width: 800px;
@@ -55,23 +55,41 @@
             justify-content: space-between;
             margin: 10px 0;
         }
-        .scale button {
+        .scale label {
             width: 50px;
             height: 50px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             font-size: 16px;
             border: 1px solid #ccc;
             border-radius: 50%;
             background-color: #fff;
             cursor: pointer;
         }
+        .scale input[type="radio"] {
+            display: none;
+        }
+        .scale input[type="radio"]:checked + label {
+            background-color: lightblue;
+            border: 2px solid blue;
+        }
         .smiley-scale {
             display: flex;
             justify-content: space-around;
         }
-        .smiley-scale img {
+        .smiley-scale label {
             width: 50px;
             height: 50px;
             cursor: pointer;
+        }
+        .smiley-scale input[type="radio"] {
+            display: none;
+        }
+        .smiley-scale input[type="radio"]:checked + label {
+            transform: scale(1.2);
+            filter: brightness(1.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
         textarea {
             width: 100%;
@@ -94,133 +112,94 @@
             cursor: pointer;
         }
         .submit button:hover {
-           background-color:#0056b3;
+            background-color: #0056b3;
             color: #fff;
             transform: scale(1.1);
-             }
-
-            .smiley-scale img:hover {
-                transform: scale(1.2);
-                filter: brightness(1.2);
-                box-shadow: 0 4px 8px rgba(0,0,0,0;3);
-        }
-
-                .smiley-scale img{
-                    transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
-                    
-        }
-
-        .scale button:hover {
-            background-color:#0056b3;
-              color: #fff;
-            transform: scale(1.1);
-             }
-
-         .scale button img{
-                    transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
-                    
-        .scale button.selected, .smiley-scale img.selected {
-            border: 2px solid blue; /* Indiquez le style pour montrer la sélection */
-            background-color: lightblue; /* Fond de couleur pour les boutons */
-        }
-        .scale button, .smiley-scale img {
-            cursor: pointer;
-            margin: 5px;
         }
     </style>
 </head>
 <body>
- 
+
 <div class="header">
     <img src="logo.png" alt="Logo">
     <div class="title">Questionnaire de satisfaction Kill Event</div>
 </div>
- 
+
 <div class="content">
-    <h2>Test 3</h2>
+    <h2>Test</h2>
     <img src="appreciation.png" alt="Appreciation Image">
-  
+
     <form action="https://formspree.io/f/moqggggg" method="POST">
         <div class="question">
             <label for="recommendation">A - Sur une échelle de 0 à 10, recommanderiez-vous KILL EVENT à un confrère ?*</label>
             <div class="scale" id="recommendation">
-                <input type="hidden" name="recommendation" id="recommendation-value">
-                <button type="button" data-value="0">0</button>
-                <button type="button" data-value="1">1</button>
-                <button type="button" data-value="2">2</button>
-                <button type="button" data-value="3">3</button>
-                <button type="button" data-value="4">4</button>
-                <button type="button" data-value="5">5</button>
-                <button type="button" data-value="6">6</button>
-                <button type="button" data-value="7">7</button>
-                <button type="button" data-value="8">8</button>
-                <button type="button" data-value="9">9</button>
-                <button type="button" data-value="10">10</button>
+                <input type="radio" name="recommendation" id="recommendation-0" value="0">
+                <label for="recommendation-0">0</label>
+                <input type="radio" name="recommendation" id="recommendation-1" value="1">
+                <label for="recommendation-1">1</label>
+                <input type="radio" name="recommendation" id="recommendation-2" value="2">
+                <label for="recommendation-2">2</label>
+                <input type="radio" name="recommendation" id="recommendation-3" value="3">
+                <label for="recommendation-3">3</label>
+                <input type="radio" name="recommendation" id="recommendation-4" value="4">
+                <label for="recommendation-4">4</label>
+                <input type="radio" name="recommendation" id="recommendation-5" value="5">
+                <label for="recommendation-5">5</label>
+                <input type="radio" name="recommendation" id="recommendation-6" value="6">
+                <label for="recommendation-6">6</label>
+                <input type="radio" name="recommendation" id="recommendation-7" value="7">
+                <label for="recommendation-7">7</label>
+                <input type="radio" name="recommendation" id="recommendation-8" value="8">
+                <label for="recommendation-8">8</label>
+                <input type="radio" name="recommendation" id="recommendation-9" value="9">
+                <label for="recommendation-9">9</label>
+                <input type="radio" name="recommendation" id="recommendation-10" value="10">
+                <label for="recommendation-10">10</label>
             </div>
         </div>
- 
+
         <div class="question">
             <label for="quality">B - Comment évaluez-vous la qualité globale de l'animation ?*</label>
             <div class="smiley-scale" id="quality">
-                <input type="hidden" name="quality" id="quality-value">
-                <img src="1.svg" alt="Smiley 1" data-value="1">
-                <img src="2.svg" alt="Smiley 2" data-value="2">
-                <img src="3.svg" alt="Smiley 3" data-value="3">
-                <img src="4.svg" alt="Smiley 4" data-value="4">
-                <img src="5.svg" alt="Smiley 5" data-value="5">
+                <input type="radio" name="quality" id="quality-1" value="1">
+                <label for="quality-1"><img src="1.svg" alt="Smiley 1"></label>
+                <input type="radio" name="quality" id="quality-2" value="2">
+                <label for="quality-2"><img src="2.svg" alt="Smiley 2"></label>
+                <input type="radio" name="quality" id="quality-3" value="3">
+                <label for="quality-3"><img src="3.svg" alt="Smiley 3"></label>
+                <input type="radio" name="quality" id="quality-4" value="4">
+                <label for="quality-4"><img src="4.svg" alt="Smiley 4"></label>
+                <input type="radio" name="quality" id="quality-5" value="5">
+                <label for="quality-5"><img src="5.svg" alt="Smiley 5"></label>
             </div>
         </div>
- 
+
         <div class="question">
             <label for="performance">C - Comment évaluez-vous la performance des animateurs ?*</label>
             <div class="smiley-scale" id="performance">
-                <input type="hidden" name="performance" id="performance-value">
-                <img src="1.svg" alt="Smiley 1" data-value="1">
-                <img src="2.svg" alt="Smiley 2" data-value="2">
-                <img src="3.svg" alt="Smiley 3" data-value="3">
-                <img src="4.svg" alt="Smiley 4" data-value="4">
-                <img src="5.svg" alt="Smiley 5" data-value="5">
+                <input type="radio" name="performance" id="performance-1" value="1">
+                <label for="performance-1"><img src="1.svg" alt="Smiley 1"></label>
+                <input type="radio" name="performance" id="performance-2" value="2">
+                <label for="performance-2"><img src="2.svg" alt="Smiley 2"></label>
+                <input type="radio" name="performance" id="performance-3" value="3">
+                <label for="performance-3"><img src="3.svg" alt="Smiley 3"></label>
+                <input type="radio" name="performance" id="performance-4" value="4">
+                <label for="performance-4"><img src="4.svg" alt="Smiley 4"></label>
+                <input type="radio" name="performance" id="performance-5" value="5">
+                <label for="performance-5"><img src="5.svg" alt="Smiley 5"></label>
             </div>
         </div>
- 
+
         <div class="question">
             <label for="suggestions">D - Partagez-nous vos suggestions :</label>
             <textarea id="suggestions" name="suggestions"></textarea>
         </div>
- 
+
         <div class="submit">
             <button type="submit">Envoyer</button>
         </div>
     </form>
 </div>
- 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Fonction pour gérer les boutons de l'échelle de recommandation
-        document.querySelectorAll('.scale button').forEach(button => {
-            button.addEventListener('click', function() {
-                // Retirer la classe 'selected' de tous les boutons
-                document.querySelectorAll('.scale button').forEach(btn => btn.classList.remove('selected'));
-                // Ajouter la classe 'selected' au bouton cliqué
-                this.classList.add('selected');
-                // Mettre à jour la valeur cachée
-                document.getElementById('recommendation-value').value = this.getAttribute('data-value');
-            });
-        });
 
-        // Fonction pour gérer les smileys
-        document.querySelectorAll('.smiley-scale img').forEach(img => {
-            img.addEventListener('click', function() {
-                // Retirer la classe 'selected' de tous les smileys dans le même scale
-                this.parentElement.querySelectorAll('img').forEach(smiley => smiley.classList.remove('selected'));
-                // Ajouter la classe 'selected' au smiley cliqué
-                this.classList.add('selected');
-                // Mettre à jour la valeur cachée
-                this.parentElement.querySelector('input[type="hidden"]').value = this.getAttribute('data-value');
-            });
-        });
-    });
-</script>
- 
 </body>
 </html>
