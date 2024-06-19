@@ -123,57 +123,48 @@
     </style>
 </head>
 <body>
-
+ 
 <div class="header">
     <img src="logo.png" alt="Logo">
     <div class="title">Questionnaire de satisfaction Kill Event</div>
 </div>
-
+ 
 <div class="content">
     <h2>Votre avis compte pour nous!</h2>
     <img src="appreciation.png" alt="Appreciation Image">
-   
+  
     <form action="https://formspree.io/f/moqggggg" method="POST">
         <div class="question">
             <label for="recommendation">A - Sur une échelle de 0 à 10, recommanderiez-vous KILL EVENT à un confrère ?*</label>
             <div class="scale" id="recommendation">
-                <button type="button">0</button>
-                <button type="button">1</button>
-                <button type="button">2</button>
-                <button type="button">3</button>
-                <button type="button">4</button>
-                <button type="button">5</button>
-                <button type="button">6</button>
-                <button type="button">7</button>
-                <button type="button">8</button>
-                <button type="button">9</button>
-                <button type="button">10</button>
+                <input type="hidden" name="recommendation" id="recommendation-value">
+                <button type="button" data-value="0">0</button>
+                <button type="button" data-value="1">1</button>
+                <button type="button" data-value="2">2</button>
+                <button type="button" data-value="3">3</button>
+                <button type="button" data-value="4">4</button>
+                <button type="button" data-value="5">5</button>
+                <button type="button" data-value="6">6</button>
+                <button type="button" data-value="7">7</button>
+                <button type="button" data-value="8">8</button>
+                <button type="button" data-value="9">9</button>
+                <button type="button" data-value="10">10</button>
             </div>
         </div>
-
+ 
         <div class="question">
             <label for="quality">B - Comment évaluez-vous la qualité globale de l'animation ?*</label>
             <div class="smiley-scale" id="quality">
-                <img src="1.svg" alt="Smiley 1">
-                <img src="2.svg" alt="Smiley 2">
-                <img src="3.svg" alt="Smiley 3">
-                <img src="4.svg" alt="Smiley 4">
-                <img src="5.svg" alt="Smiley 5">
+                <input type="hidden" name="quality" id="quality-value">
+                <img src="1.svg" alt="Smiley 1" data-value="1">
+                <img src="2.svg" alt="Smiley 2" data-value="2">
+                <img src="3.svg" alt="Smiley 3" data-value="3">
+                <img src="4.svg" alt="Smiley 4" data-value="4">
+                <img src="5.svg" alt="Smiley 5" data-value="5">
             </div>
         </div>
-
+ 
         <div class="question">
-            <label for="performance">C - Comment évaluez-vous la performance des animateurs ?*</label>
-            <div class="smiley-scale" id="performance">
-                <img src="1.svg" alt="Smiley 1">
-                <img src="2.svg" alt="Smiley 2">
-                <img src="3.svg" alt="Smiley 3">
-                <img src="4.svg" alt="Smiley 4">
-                <img src="5.svg" alt="Smiley 5">
-            </div>
-        </div>
-
-         <div class="question">
             <label for="performance">C - Comment évaluez-vous la performance des animateurs ?*</label>
             <div class="smiley-scale" id="performance">
                 <input type="hidden" name="performance" id="performance-value">
@@ -184,19 +175,19 @@
                 <img src="5.svg" alt="Smiley 5" data-value="5">
             </div>
         </div>
-
+ 
         <div class="question">
             <label for="suggestions">D - Partagez-nous vos suggestions :</label>
             <textarea id="suggestions" name="suggestions"></textarea>
         </div>
-
+ 
         <div class="submit">
             <button type="submit">Envoyer</button>
         </div>
     </form>
 </div>
-
-    <script>
+ 
+<script>
     // Fonction pour gérer les boutons de l'échelle de recommandation
     document.querySelectorAll('.scale button').forEach(button => {
         button.addEventListener('click', function() {
@@ -221,9 +212,6 @@
         });
     });
 </script>
-
-
+ 
 </body>
 </html>
-
-
