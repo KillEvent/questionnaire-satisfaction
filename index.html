@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Questionnaire de Satisfaction</title>
-    
-<style>
+    <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -17,21 +16,20 @@
         .header {
             width: 100%;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            align-items: center;
             padding: 20px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            
         }
         .header img {
-            height: 140px;
+            height: 100px;
         }
         .header .title {
             font-size: 24px;
             font-weight: bold;
-            margin-top: 50px;
-            margin-right: 20px;
+            margin-top: 10px;
+            text-align: center;
         }
-  
         .content {
             max-width: 800px;
             width: 100%;
@@ -42,11 +40,14 @@
             margin: 20px 0;
         }
         .content img {
-            height: 400px;
+            height: 300px;
+            width: 100%;
+            object-fit: cover;
         }
         .question {
             margin: 20px 0;
             text-align: left;
+            padding: 0 10px;
         }
         .question label {
             font-size: 18px;
@@ -55,12 +56,13 @@
         }
         .scale {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             margin: 10px 0;
         }
         .scale label {
-            width: 50px;
-            height: 50px;
+            width: 48px;
+            height: 48px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -69,12 +71,11 @@
             border-radius: 50%;
             background-color: #fff;
             cursor: pointer;
+            margin: 5px 0;
         }
         .scale input[type="radio"] {
             display: none;
         }
-    
-    .scale label img:hover,
         .scale input[type="radio"]:checked + label {
             background-color: lightblue;
             border: 2px solid blue;
@@ -125,53 +126,49 @@
             color: #fff;
             transform: scale(1.1);
         }
-    @media (max-width: 600px) {
-    .content img {
-        height: 200px;
-    }
+
+        @media (max-width: 600px) {
+            .content img {
+                height: 200px;
+            }
+            .scale label {
+                display: none;
+            }
+            .scale input[type="radio"] {
+                display: none;
+            }
+            .scale input[type="range"] {
+                display: block;
+                width: 100%;
+                margin: 20px 0;
+            }
+            .smiley-scale label img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+        @media (max-width: 600px) {
     .scale label {
-        width: 40px;
-        height: 40px;
-        font-size: 14px;
+        display: none;
+    }
+    .scale input[type="radio"] {
+        display: none;
+    }
+    .scale input[type="range"] {
+        display: block;
+        width: 100%;
+        margin: 20px 0;
     }
     .smiley-scale label img {
         width: 40px;
         height: 40px;
     }
-    .header {
-    flex-direction: column;
-    align-items: center;
 }
-.header img {
-    height: 100px;
-}
-.header .title {
-    margin-top: 10px;
-    text-align: center;
-}
-    .content img {
-    height: 300px;
-    width: 100%;
-    object-fit: cover;
-}
-.question {
-    padding: 0 10px;
-}
-    .scale {
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-.scale label {
-    width: 48px;
-    height: 48px;
-    margin: 5px 0;
-}}
-
-
     </style>
-
 </head>
 <body>
+    <input type="range" id="recommendation-range" min="0" max="10" value="5" style="display: none;">
+
 
 <div class="header">
     <img src="logo.png" alt="Logo">
@@ -179,7 +176,7 @@
 </div>
 
 <div class="content">
-    <h2>Test 7!</h2>
+    <h2>Votre avis compte pour nous!</h2>
     <img src="appreciation.png" alt="Appreciation Image">
 
     <form action="https://formspree.io/f/moqggggg" method="POST">
@@ -208,6 +205,7 @@
                 <label for="recommendation-9">9</label>
                 <input type="radio" name="recommendation" id="recommendation-10" value="10">
                 <label for="recommendation-10">10</label>
+                <input type="range" id="recommendation-range" min="0" max="10" value="5" style="display: none;">
             </div>
         </div>
 
@@ -254,5 +252,42 @@
     </form>
 </div>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const rangeInput = document.getElementById('recommendation-range');
+        const radioInputs = document.querySelectorAll('.scale input[type="radio"]');
+        const isMobile = window.matchMedia("(max-width: 600px)").matches;
+
+        if (isMobile) {
+            rangeInput.style.display = 'block';
+            radioInputs.forEach(input => input.style.display = 'none');
+            document.querySelectorAll('.scale label').forEach(label => label.style.display = 'none');
+
+            rangeInput.addEventListener('input', function() {
+                const value = rangeInput.value;
+                document.querySelectorAll(`input[name="recommendation"][value="${value}"]`)[0].checked = true;
+            });
+        }
+    });
+</script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const rangeInput = document.getElementById('recommendation-range');
+    const radioInputs = document.querySelectorAll('.scale input[type="radio"]');
+    const isMobile = window.matchMedia("(max-width: 600px)").matches;
+
+    if (isMobile) {
+        rangeInput.style.display = 'block';
+        radioInputs.forEach(input => input.style.display = 'none');
+        document.querySelectorAll('.scale label').forEach(label => label.style.display = 'none');
+
+        rangeInput.addEventListener('input', function() {
+            const value = rangeInput.value;
+            document.querySelectorAll(`input[name="recommendation"][value="${value}"]`)[0].checked = true;
+        });
+    }
+});
+
+
 </body>
 </html>
+
