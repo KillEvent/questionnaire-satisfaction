@@ -2,187 +2,105 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Questionnaire de Satisfaction</title>
+    <title>Questionnaire de satisfaction Kill Event</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .header {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            padding: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .header img {
-            height: 140px;
-        }
-        .header .title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-top: 50px;
-            margin-right:20px;
-        }
-        .content {
-            max-width: 800px;
-            width: 100%;
-            padding: 20px;
-            text-align: center;
-        }
-        .content h2 {
-            margin: 20px 0;
-        }
-        .content img {
-            height: 400px;
-        }
-        .question {
-            margin: 20px 0;
-            text-align: left;
-        }
-        .question label {
-            font-size: 18px;
-            display: block;
-            margin-bottom: 10px;
-        }
-        .scale {
-            display: flex;
-            justify-content: space-between;
-            margin: 10px 0;
-        }
-        .scale button {
-            width: 50px;
-            height: 50px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 50%;
-            background-color: #fff;
-            cursor: pointer;
-        }
-        .smiley-scale {
-            display: flex;
-            justify-content: space-around;
-        }
-        .smiley-scale img {
-            width: 50px;
-            height: 50px;
-            cursor: pointer;
-        }
-        textarea {
-            width: 100%;
-            height: 100px;
-            padding: 10px;
-            margin-top: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        .submit {
-            margin: 20px 0;
-        }
-        .submit button {
-            padding: 10px 20px;
-            font-size: 18px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .submit button:hover {
-           background-color:#0056b3;
-            color: #fff;
-            transform: scale(1.1);
-             }
-
-            .smiley-scale img:hover {
-                transform: scale(1.2);
-                filter: brightness(1.2);
-                box-shadow: 0 4px 8px rgba(0,0,0,0;3);
-        }
-
-                .smiley-scale img{
-                    transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
-                    
-        }
-
-        .scale button:hover {
-            background-color:#0056b3;
-              color: #fff;
-            transform: scale(1.1);
-             }
-
-         .scale button img{
-                    transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
-                    
+        .scale button.selected, .smiley-scale img.selected {
+            border: 2px solid blue; /* Indiquez le style pour montrer la sélection */
+            background-color: lightblue; /* Fond de couleur pour les boutons */
         }
     </style>
 </head>
 <body>
-
+ 
 <div class="header">
     <img src="logo.png" alt="Logo">
     <div class="title">Questionnaire de satisfaction Kill Event</div>
 </div>
-
+ 
 <div class="content">
     <h2>Votre avis compte pour nous!</h2>
     <img src="appreciation.png" alt="Appreciation Image">
-   
+ 
     <form action="https://formspree.io/f/moqggggg" method="POST">
         <div class="question">
             <label for="recommendation">A - Sur une échelle de 0 à 10, recommanderiez-vous KILL EVENT à un confrère ?*</label>
             <div class="scale" id="recommendation">
-                <button type="button">0</button>
-                <button type="button">1</button>
-                <button type="button">2</button>
-                <button type="button">3</button>
-                <button type="button">4</button>
-                <button type="button">5</button>
-                <button type="button">6</button>
-                <button type="button">7</button>
-                <button type="button">8</button>
-                <button type="button">9</button>
-                <button type="button">10</button>
+                <input type="hidden" name="recommendation" id="recommendation-value">
+                <button type="button" data-value="0">0</button>
+                <button type="button" data-value="1">1</button>
+                <button type="button" data-value="2">2</button>
+                <button type="button" data-value="3">3</button>
+                <button type="button" data-value="4">4</button>
+                <button type="button" data-value="5">5</button>
+                <button type="button" data-value="6">6</button>
+                <button type="button" data-value="7">7</button>
+                <button type="button" data-value="8">8</button>
+                <button type="button" data-value="9">9</button>
+                <button type="button" data-value="10">10</button>
             </div>
         </div>
-
+ 
         <div class="question">
             <label for="quality">B - Comment évaluez-vous la qualité globale de l'animation ?*</label>
             <div class="smiley-scale" id="quality">
-                <img src="1.svg" alt="Smiley 1">
-                <img src="2.svg" alt="Smiley 2">
-                <img src="3.svg" alt="Smiley 3">
-                <img src="4.svg" alt="Smiley 4">
-                <img src="5.svg" alt="Smiley 5">
+                <input type="hidden" name="quality" id="quality-value">
+                <img src="1.svg" alt="Smiley 1" data-value="1">
+                <img src="2.svg" alt="Smiley 2" data-value="2">
+                <img src="3.svg" alt="Smiley 3" data-value="3">
+                <img src="4.svg" alt="Smiley 4" data-value="4">
+                <img src="5.svg" alt="Smiley 5" data-value="5">
             </div>
         </div>
-
+ 
         <div class="question">
             <label for="performance">C - Comment évaluez-vous la performance des animateurs ?*</label>
             <div class="smiley-scale" id="performance">
-                <img src="1.svg" alt="Smiley 1">
-                <img src="2.svg" alt="Smiley 2">
-                <img src="3.svg" alt="Smiley 3">
-                <img src="4.svg" alt="Smiley 4">
-                <img src="5.svg" alt="Smiley 5">
+                <input type="hidden" name="performance" id="performance-value">
+                <img src="1.svg" alt="Smiley 1" data-value="1">
+                <img src="2.svg" alt="Smiley 2" data-value="2">
+                <img src="3.svg" alt="Smiley 3" data-value="3">
+                <img src="4.svg" alt="Smiley 4" data-value="4">
+                <img src="5.svg" alt="Smiley 5" data-value="5">
             </div>
         </div>
-
+ 
         <div class="question">
             <label for="suggestions">D - Partagez-nous vos suggestions :</label>
             <textarea id="suggestions" name="suggestions"></textarea>
         </div>
-
+ 
         <div class="submit">
             <button type="submit">Envoyer</button>
         </div>
     </form>
 </div>
+ 
+<script>
+    // Fonction pour gérer les boutons de l'échelle de recommandation
+    document.querySelectorAll('.scale button').forEach(button => {
+        button.addEventListener('click', function() {
+            // Retirer la classe 'selected' de tous les boutons
+            document.querySelectorAll('.scale button').forEach(btn => btn.classList.remove('selected'));
+            // Ajouter la classe 'selected' au bouton cliqué
+            this.classList.add('selected');
+            // Mettre à jour la valeur cachée
+            document.getElementById('recommendation-value').value = this.getAttribute('data-value');
+        });
+    });
 
+    // Fonction pour gérer les smileys
+    document.querySelectorAll('.smiley-scale img').forEach(img => {
+        img.addEventListener('click', function() {
+            // Retirer la classe 'selected' de tous les smileys dans le même scale
+            this.parentElement.querySelectorAll('img').forEach(smiley => smiley.classList.remove('selected'));
+            // Ajouter la classe 'selected' au smiley cliqué
+            this.classList.add('selected');
+            // Mettre à jour la valeur cachée
+            this.parentElement.querySelector('input[type="hidden"]').value = this.getAttribute('data-value');
+        });
+    });
+</script>
+ 
 </body>
 </html>
+
