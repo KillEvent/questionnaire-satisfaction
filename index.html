@@ -75,19 +75,11 @@
         .scale input[type="radio"] {
             display: none;
         }
- .smiley-scale label img {
-    width: 50px;
-    height: 50px;
-    transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
-}
-.smiley-scale label img:hover,
-.smiley-scale input[type="radio"]:checked + label img {
-    transform: scale(1.3) rotate(5deg);
-    filter: brightness(1.3);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-
+        .scale label img,
+        .scale input[type="radio"]:checked + label {
+            background-color: #FFA5A5;
+            border: 2px solid #FF5757;
+        }
         .smiley-scale {
             display: flex;
             justify-content: space-around;
