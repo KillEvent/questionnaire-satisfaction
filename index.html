@@ -184,6 +184,33 @@
     </form>
 </div>
 
+    <script>
+    // Fonction pour gérer les boutons de l'échelle de recommandation
+    document.querySelectorAll('.scale button').forEach(button => {
+        button.addEventListener('click', function() {
+            // Retirer la classe 'selected' de tous les boutons
+            document.querySelectorAll('.scale button').forEach(btn => btn.classList.remove('selected'));
+            // Ajouter la classe 'selected' au bouton cliqué
+            this.classList.add('selected');
+            // Mettre à jour la valeur cachée
+            document.getElementById('recommendation-value').value = this.getAttribute('data-value');
+        });
+    });
+
+    // Fonction pour gérer les smileys
+    document.querySelectorAll('.smiley-scale img').forEach(img => {
+        img.addEventListener('click', function() {
+            // Retirer la classe 'selected' de tous les smileys dans le même scale
+            this.parentElement.querySelectorAll('img').forEach(smiley => smiley.classList.remove('selected'));
+            // Ajouter la classe 'selected' au smiley cliqué
+            this.classList.add('selected');
+            // Mettre à jour la valeur cachée
+            this.parentElement.querySelector('input[type="hidden"]').value = this.getAttribute('data-value');
+        });
+    });
+</script>
+
+
 </body>
 </html>
 
