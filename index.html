@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire de Satisfaction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .header img {
+            height: 50px;
+        }
+        .header .title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .content {
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+        }
+        .content h2 {
+            margin: 20px 0;
+        }
+        .content img {
+            height: 100px;
+        }
+        .question {
+            margin: 20px 0;
+            text-align: left;
+        }
+        .question label {
+            font-size: 18px;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .scale {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
+        .scale button {
+            width: 30px;
+            height: 30px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            background-color: #fff;
+            cursor: pointer;
+        }
+        .smiley-scale {
+            display: flex;
+            justify-content: space-around;
+        }
+        .smiley-scale img {
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .submit {
+            margin: 20px 0;
+        }
+        .submit button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <img src="logo.png" alt="Logo">
+    <div class="title">Questionnaire de satisfaction Kill Event</div>
+</div>
+
+<div class="content">
+    <h2>---------APPRECIATION GLOBALE----------</h2>
+    <img src="appreciation_image.png" alt="Appreciation Image">
+   
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+        <div class="question">
+            <label for="recommendation">A - Sur une échelle de 0 à 10, recommanderiez-vous ADNOV à un confrère ?*</label>
+            <div class="scale" id="recommendation">
+                <button type="button">0</button>
+                <button type="button">1</button>
+                <button type="button">2</button>
+                <button type="button">3</button>
+                <button type="button">4</button>
+                <button type="button">5</button>
+                <button type="button">6</button>
+                <button type="button">7</button>
+                <button type="button">8</button>
+                <button type="button">9</button>
+                <button type="button">10</button>
+            </div>
+        </div>
+
+        <div class="question">
+            <label for="quality">B - Comment évaluez-vous la qualité globale de l'animation ?*</label>
+            <div class="smiley-scale" id="quality">
+                <img src="smiley1.png" alt="Smiley 1">
+                <img src="smiley2.png" alt="Smiley 2">
+                <img src="smiley3.png" alt="Smiley 3">
+                <img src="smiley4.png" alt="Smiley 4">
+                <img src="smiley5.png" alt="Smiley 5">
+            </div>
+        </div>
+
+        <div class="question">
+            <label for="performance">C - Comment évaluez-vous la performance des animateurs ?*</label>
+            <div class="smiley-scale" id="performance">
+                <img src="smiley1.png" alt="Smiley 1">
+                <img src="smiley2.png" alt="Smiley 2">
+                <img src="smiley3.png" alt="Smiley 3">
+                <img src="smiley4.png" alt="Smiley 4">
+                <img src="smiley5.png" alt="Smiley 5">
+            </div>
+        </div>
+
+        <div class="question">
+            <label for="suggestions">D - Partagez-nous vos suggestions :</label>
+            <textarea id="suggestions" name="suggestions"></textarea>
+        </div>
+
+        <div class="submit">
+            <button type="submit">Envoyer</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
