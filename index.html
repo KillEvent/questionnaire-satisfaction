@@ -114,79 +114,59 @@
         .submit button {
             padding: 10px 20px;
             font-size: 18px;
-            background-color: #FF5757;
+            background-color: #007BFF;
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
         }
         .submit button:hover {
-            background-color: #E54D4D;
+            background-color: #0056b3;
             color: #fff;
             transform: scale(1.1);
         }
-  
-     @media (max-width: 600px) {
+    @media (max-width: 600px) {
     .content img {
         height: 200px;
+    }
+    .scale label {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
     }
     .smiley-scale label img {
         width: 40px;
         height: 40px;
     }
     .header {
-        flex-direction: column;
-        align-items: center;
-    }
-    .header img {
-        height: 100px;
-    }
-    .header .title {
-        margin-top: 10px;
-        text-align: center;
-    }
-    .content img {
-        height: 300px;
-        width: 100%;
-        object-fit: cover;
-    }
-    .question {
-        padding: 0 10px;
-    }
-    .scale label {
-        display: none;
-    }
-    .scale input[type="radio"] {
-        display: none;
-    }
-    .scale input[type="range"] {
-        display: block;
-        width: 80%;
-        margin: 20px auto;
-        -webkit-appearance: none;
-        appearance: none;
-        height: 10px;
-        background: #FF5757; /* Original color */
-        border-radius: 5px;
-        outline: none;
-    }
-    .scale input[type="range"]::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        appearance: none;
-        width: 25px;
-        height: 25px;
-        background: #E54D4D; /* Slightly darker color */
-        cursor: pointer;
-        border-radius: 50%;
-    }
-    .scale input[type="range"]::-moz-range-thumb {
-        width: 25px;
-        height: 25px;
-        background: #E54D4D; /* Slightly darker color */
-        cursor: pointer;
-        border-radius: 50%;
-    }
+    flex-direction: column;
+    align-items: center;
 }
+.header img {
+    height: 100px;
+}
+.header .title {
+    margin-top: 10px;
+    text-align: center;
+}
+    .content img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+.question {
+    padding: 0 10px;
+}
+    .scale {
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.scale label {
+    width: 48px;
+    height: 48px;
+    margin: 5px 0;
+}}
+
 
     </style>
 
@@ -199,42 +179,37 @@
 </div>
 
 <div class="content">
-    <h2>Test 2!</h2>
+    <h2>Test 7!</h2>
     <img src="appreciation.png" alt="Appreciation Image">
 
     <form action="https://formspree.io/f/moqggggg" method="POST">
-       <div class="question">
-    <label for="recommendation">A - Sur une échelle de 0 à 10, recommanderiez-vous KILL EVENT à un confrère ?*</label>
-    <div class="scale" id="recommendation">
-        <input type="radio" name="recommendation" id="recommendation-0" value="0">
-        <label for="recommendation-0">0</label>
-        <input type="radio" name="recommendation" id="recommendation-1" value="1">
-        <label for="recommendation-1">1</label>
-        <input type="radio" name="recommendation" id="recommendation-2" value="2">
-        <label for="recommendation-2">2</label>
-        <input type="radio" name="recommendation" id="recommendation-3" value="3">
-        <label for="recommendation-3">3</label>
-        <input type="radio" name="recommendation" id="recommendation-4" value="4">
-        <label for="recommendation-4">4</label>
-        <input type="radio" name="recommendation" id="recommendation-5" value="5">
-        <label for="recommendation-5">5</label>
-        <input type="radio" name="recommendation" id="recommendation-6" value="6">
-        <label for="recommendation-6">6</label>
-        <input type="radio" name="recommendation" id="recommendation-7" value="7">
-        <label for="recommendation-7">7</label>
-        <input type="radio" name="recommendation" id="recommendation-8" value="8">
-        <label for="recommendation-8">8</label>
-        <input type="radio" name="recommendation" id="recommendation-9" value="9">
-        <label for="recommendation-9">9</label>
-        <input type="radio" name="recommendation" id="recommendation-10" value="10">
-        <label for="recommendation-10">10</label>
-        <input type="range" id="recommendation-range" min="0" max="10" value="5" style="display: none;">
-    </div>
-</div>
-
+        <div class="question">
+            <label for="recommendation">A - Sur une échelle de 0 à 10, recommanderiez-vous KILL EVENT à un confrère ?*</label>
+            <div class="scale" id="recommendation">
+                <input type="radio" name="recommendation" id="recommendation-0" value="0">
+                <label for="recommendation-0">0</label>
+                <input type="radio" name="recommendation" id="recommendation-1" value="1">
+                <label for="recommendation-1">1</label>
+                <input type="radio" name="recommendation" id="recommendation-2" value="2">
+                <label for="recommendation-2">2</label>
+                <input type="radio" name="recommendation" id="recommendation-3" value="3">
+                <label for="recommendation-3">3</label>
+                <input type="radio" name="recommendation" id="recommendation-4" value="4">
+                <label for="recommendation-4">4</label>
+                <input type="radio" name="recommendation" id="recommendation-5" value="5">
+                <label for="recommendation-5">5</label>
+                <input type="radio" name="recommendation" id="recommendation-6" value="6">
+                <label for="recommendation-6">6</label>
+                <input type="radio" name="recommendation" id="recommendation-7" value="7">
+                <label for="recommendation-7">7</label>
+                <input type="radio" name="recommendation" id="recommendation-8" value="8">
+                <label for="recommendation-8">8</label>
+                <input type="radio" name="recommendation" id="recommendation-9" value="9">
+                <label for="recommendation-9">9</label>
+                <input type="radio" name="recommendation" id="recommendation-10" value="10">
+                <label for="recommendation-10">10</label>
+            </div>
         </div>
-        <input type="range" id="recommendation-range" min="0" max="10" value="5" style="display: none;">
-
 
         <div class="question">
             <label for="quality">B - Comment évaluez-vous la qualité globale de l'animation ?*</label>
@@ -278,28 +253,9 @@
         </div>
     </form>
 </div>
-    
-  <script>document.addEventListener('DOMContentLoaded', function() {
-    const rangeInput = document.getElementById('recommendation-range');
-    const radioInputs = document.querySelectorAll('.scale input[type="radio"]');
-    const isMobile = window.matchMedia("(max-width: 600px)").matches;
 
-    if (isMobile) {
-        rangeInput.style.display = 'block';
-        radioInputs.forEach(input => input.style.display = 'none');
-        document.querySelectorAll('.scale label').forEach(label => label.style.display = 'none');
-
-        rangeInput.addEventListener('input', function() {
-            const value = rangeInput.value;
-            document.querySelectorAll(`input[name="recommendation"][value="${value}"]`)[0].checked = true;
-        });
-    }
-});
-</script>
 </body>
-  
 </html>
-
 
 
 
