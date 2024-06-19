@@ -79,7 +79,6 @@
             background-color: #FFA5A5;
             border: 2px solid #FF5757;
         }
-      
         .smiley-scale {
             display: flex;
             justify-content: space-around;
@@ -96,29 +95,11 @@
             height: 50px;
             transition: transform 0.2s ease, filter 0.2s ease;
         }
-    
- .smiley-scale label img {
-    width: 50px;
-    height: 50px;
-    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-.smiley-scale label img:hover,
-.smiley-scale input[type="radio"]:checked + label img {
-    transform: scale(1.4) rotate(-10deg);
-    filter: brightness(1.4);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-    animation: wiggle 0.3s ease-in-out;
-}
-
-@keyframes wiggle {
-    0%, 100% {
-        transform: scale(1.4) rotate(-10deg);
-    }
-    50% {
-        transform: scale(1.4) rotate(10deg);
-    }
-}
-
+        .smiley-scale label img:hover,
+        .smiley-scale input[type="radio"]:checked + label img {
+            transform: scale(1.2);
+            filter: brightness(1.2);
+        }
         textarea {
             width: 100%;
             height: 100px;
@@ -152,7 +133,10 @@
             .content img {
                 height: 200px;
             }
-          
+            .smiley-scale label img {
+                width: 40px;
+                height: 40px;
+            }
             .header {
                 flex-direction: column;
                 align-items: center;
@@ -292,7 +276,7 @@
         </div>
 
         <div class="question">
-            <label for="sexytude">4 - Comment évaluez vous la sexytude des animateurs?*</label>
+            <label for="sexytude">4 - Comment évaluez vous la sexytude des animateurs?</label>
             <div class="smiley-scale" id="sexytude">
                 <input type="radio" name="sexytude" id="sexytude-1" value="1">
                 <label for="sexytude-1"><img src="1.svg" alt="Smiley 1"></label>
@@ -348,5 +332,3 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </body>
 </html>
-
-
