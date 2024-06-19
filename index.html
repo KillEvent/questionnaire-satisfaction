@@ -256,6 +256,25 @@
         </div>
     </form>
 </div>
+<SCRIPT>document.addEventListener('DOMContentLoaded', function() {
+    const rangeInput = document.getElementById('recommendation-range');
+    const radioInputs = document.querySelectorAll('.scale input[type="radio"]');
+    const isMobile = window.matchMedia("(max-width: 600px)").matches;
+
+    if (isMobile) {
+        rangeInput.style.display = 'block';
+        radioInputs.forEach(input => input.style.display = 'none');
+        document.querySelectorAll('.scale label').forEach(label => label.style.display = 'none');
+
+        rangeInput.addEventListener('input', function() {
+            const value = rangeInput.value;
+            document.querySelectorAll(`input[name="recommendation"][value="${value}"]`)[0].checked = true;
+        });
+    }
+});
+</SCRIPT>
+ 
+
 
 </body>
 </html>
