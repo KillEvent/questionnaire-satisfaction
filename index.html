@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Questionnaire de Satisfaction</title>
     
-<style>
-    .chiffre {
-    display: none;
-}
+    <style>
+        .chiffre {
+            display: none;
+        }
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -23,7 +23,6 @@
             justify-content: space-between;
             padding: 20px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            
         }
         .header img {
             height: 140px;
@@ -34,7 +33,6 @@
             margin-top: 50px;
             margin-right: 20px;
         }
-  
         .content {
             max-width: 800px;
             width: 100%;
@@ -76,13 +74,11 @@
         .scale input[type="radio"] {
             display: none;
         }
-    
-   .scale label img,
-.scale input[type="radio"]:checked + label {
-    background-color: #FFA5A5;
-    border: 2px solid #FF5757;
-}
-
+        .scale label img,
+        .scale input[type="radio"]:checked + label {
+            background-color: #FFA5A5;
+            border: 2px solid #FF5757;
+        }
         .smiley-scale {
             display: flex;
             justify-content: space-around;
@@ -129,86 +125,78 @@
             color: #fff;
             transform: scale(1.1);
         }
-  
-@media (max-width: 600px) {
-        .chiffre {
-        display: inline;
-    }
-
-    .content img {
-        height: 200px;
-    }
-    .smiley-scale label img {
-        width: 40px;
-        height: 40px;
-    }
-    .header {
-        flex-direction: column;
-        align-items: center;
-    }
-        .header .title {
-            margin-left: 20px;
-          
+        @media (max-width: 600px) {
+            .chiffre {
+                display: inline;
+            }
+            .content img {
+                height: 200px;
+            }
+            .smiley-scale label img {
+                width: 40px;
+                height: 40px;
+            }
+            .header {
+                flex-direction: column;
+                align-items: center;
+            }
+            .header .title {
+                margin-left: 20px;
+            }
+            .header img {
+                height: 100px;
+            }
+            .header .title {
+                margin-top: 10px;
+                text-align: center;
+            }
+            .content img {
+                height: 300px;
+                width: 100%;
+                object-fit: cover;
+            }
+            .question {
+                padding: 0 10px;
+            }
+            .scale label {
+                display: none;
+            }
+            .scale input[type="radio"] {
+                display: none;
+            }
+            .scale input[type="range"] {
+                display: block;
+                width: 80%;
+                margin: 20px auto;
+                -webkit-appearance: none;
+                appearance: none;
+                height: 10px;
+                background: #FFF; /* Default interior color */
+                border-radius: 5px;
+                outline: none;
+                border: 2px solid #FF5757; /* Thumb border color */
+            }
+            .scale input[type="range"]::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 25px;
+                height: 25px;
+                background: #FF5757; /* Thumb color */
+                cursor: pointer;
+                border-radius: 50%;
+                border: 2px solid #FF5757; /* Thumb border color */
+                margin-top: -8px; /* Adjust thumb position */
+            }
+            .scale input[type="range"]::-moz-range-thumb {
+                width: 25px;
+                height: 25px;
+                background: #FF5757; /* Thumb color */
+                cursor: pointer;
+                border-radius: 50%;
+                border: 2px solid #FF5757; /* Thumb border color */
+            }
         }
-  
-    .header img {
-        height: 100px;
-    }
-    .header .title {
-        margin-top: 10px;
-        text-align: center;
-    }
-    .content img {
-        height: 300px;
-        width: 100%;
-        object-fit: cover;
-    }
-    .question {
-        padding: 0 10px;
-    }
-    .scale label {
-        display: none;
-    }
-    .scale input[type="radio"] {
-        display: none;
-    }
-    .scale input[type="range"] {
-        display: block;
-        width: 80%;
-        margin: 20px auto;
-        -webkit-appearance: none;
-        appearance: none;
-        height: 10px;
-        background: #FFF; /* Default interior color */
-        border-radius: 5px;
-        outline: none;
-          border: 2px solid #FF5757; /* Thumb border color */
-        
-    }
-    .scale input[type="range"]::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        appearance: none;
-        width: 25px;
-        height: 25px;
-        background: #FF5757; /* Thumb color */
-        cursor: pointer;
-        border-radius: 50%;
-        border: 2px solid #FF5757; /* Thumb border color */
-        margin-top: -8px; /* Adjust thumb position */
-    }
-    .scale input[type="range"]::-moz-range-thumb {
-        width: 25px;
-        height: 25px;
-        background: #FF5757; /* Thumb color */
-        cursor: pointer;
-        border-radius: 50%;
-        border: 2px solid #FF5757; /* Thumb border color */
-    }
-}
-
-
     </style>
-
 </head>
 <body>
 
@@ -247,10 +235,10 @@
                 <label for="recommendation-9">9</label>
                 <input type="radio" name="recommendation" id="recommendation-10" value="10">
                 <label for="recommendation-10">10</label>
-                 <P class="chiffre">O</P>  <input type="range" id="recommendation-range" min="0" max="10" value="5" style="display: none;"> <P class="chiffre">10</P>
+                <p class="chiffre">0</p>
+                <input type="range" id="recommendation-range" min="0" max="10" value="5" style="display: none;">
+                <p class="chiffre">10</p>
             </div>
-         
-
         </div>
 
         <div class="question">
@@ -286,7 +274,23 @@
         </div>
 
         <div class="question">
-            <label for="suggestions">D - Partagez-nous vos suggestions :</label>
+            <label for="sexytude">D - Evaluez la sexytude des animateurs :</label>
+            <div class="smiley-scale" id="sexytude">
+                <input type="radio" name="sexytude" id="sexytude-1" value="1">
+                <label for="sexytude-1"><img src="1.svg" alt="Smiley 1"></label>
+                <input type="radio" name="sexytude" id="sexytude-2" value="2">
+                <label for="sexytude-2"><img src="2.svg" alt="Smiley 2"></label>
+                <input type="radio" name="sexytude" id="sexytude-3" value="3">
+                <label for="sexytude-3"><img src="3.svg" alt="Smiley 3"></label>
+                <input type="radio" name="sexytude" id="sexytude-4" value="4">
+                <label for="sexytude-4"><img src="4.svg" alt="Smiley 4"></label>
+                <input type="radio" name="sexytude" id="sexytude-5" value="5">
+                <label for="sexytude-5"><img src="5.svg" alt="Smiley 5"></label>
+            </div>
+        </div>
+
+        <div class="question">
+            <label for="suggestions">E - Partagez-nous vos suggestions :</label>
             <textarea id="suggestions" name="suggestions"></textarea>
         </div>
 
@@ -295,7 +299,9 @@
         </div>
     </form>
 </div>
-<SCRIPT>document.addEventListener('DOMContentLoaded', function() {
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
     const rangeInput = document.getElementById('recommendation-range');
     const radioInputs = document.querySelectorAll('.scale input[type="radio"]');
     const isMobile = window.matchMedia("(max-width: 600px)").matches;
@@ -320,13 +326,9 @@
         });
     }
 });
-
-</SCRIPT>
- 
-
+</script>
 
 </body>
 </html>
-
 
 
