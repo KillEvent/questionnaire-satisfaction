@@ -77,16 +77,19 @@
         .smiley-scale {
             display: flex;
             justify-content: space-around;
+            align-items: center;
         }
         .smiley-scale label {
+            cursor: pointer;
+        }
+        .smiley-scale label img {
             width: 50px;
             height: 50px;
-            cursor: pointer;
         }
         .smiley-scale input[type="radio"] {
             display: none;
         }
-        .smiley-scale input[type="radio"]:checked + label {
+        .smiley-scale input[type="radio"]:checked + label img {
             transform: scale(1.2);
             filter: brightness(1.2);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -126,7 +129,7 @@
 </div>
 
 <div class="content">
-    <h2>Test</h2>
+    <h2>Votre avis compte pour nous!</h2>
     <img src="appreciation.png" alt="Appreciation Image">
 
     <form action="https://formspree.io/f/moqggggg" method="POST">
