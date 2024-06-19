@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Questionnaire de Satisfaction</title>
     
-        
-        <style>
+ <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -87,14 +86,12 @@
         .smiley-scale label img {
             width: 50px;
             height: 50px;
+            transition: transform 0.2s ease, filter 0.2s ease;
         }
-        .smiley-scale input[type="radio"] {
-            display: none;
-        }
+        .smiley-scale label img:hover,
         .smiley-scale input[type="radio"]:checked + label img {
             transform: scale(1.2);
             filter: brightness(1.2);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
         textarea {
             width: 100%;
